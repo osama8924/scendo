@@ -1,159 +1,111 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مشروعي الأول | Scando Vibe</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-        }
-        .hero-section {
-                /* تفعيل Flexbox لتوسيط كل شيء */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            /* ثانياً: الحجم (يجب أن يملأ الشاشة أول ما تفتح الموقع) */
-            height: 100vh;
-            width: 100%;
-
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://plus.unsplash.com/premium_photo-1684445035564-c98efbe1fb7d?q=80&w=687&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* سطر إضافي يجعل الخلفية ثابتة والكلام يتحرك فوقها - جربه! */
-            color: #e6f1ff;
-        }
-
-.about-section {
-    padding: 80px 20px;     /* لإعطاء مساحة (تنفس) فوق وتحت النص */
-    text-align: center;      /* لتوسيط النصوص في المنتصف */
-    background-color: #f9f9f9; /* لون رمادي خفيف جداً لتمييز القسم عن غيره */
-}
-
-.about-section h2 {
-    font-size: 36px;        /* تكبير حجم العنوان */
-    color: #333;             /* لون رمادي غامق */
-    margin-bottom: 20px;     /* مسافة بين العنوان والفقرة التي تحته */
-}
-
-.about-section p {
-    font-size: 18px;
-    max-width: 800px;        /* منع السطر من أن يصبح طويلاً جداً ومتعباً للعين */
-    margin: 0 auto;          /* سطر سحري يوسط الصندوق الذي يحتوي النص */
-    line-height: 1.6;        /* تباعد الأسطر لجعل القراءة مريحة */
-    color: #666;
-}
-.services {
-    display: flex;          /* اجعل الأبناء يقفون بجانب بعضهم */
-    justify-content: center; /* وسطهم في منتصف الشاشة */
-    gap: 20px;              /* اترك مسافة 20 بكسل بين كل صندوق والآخر */
-    padding: 50px;
-    background-color: white;
-}
-
-.service-box {
-    background-color: #f1f1f1;
-    padding: 30px;
-    width: 250px;           /* عرض كل صندوق */
-    text-align: center;
-    border-radius: 15px;    /* حواف دائرية مثل تمرين المربع الأحمر */
-    transition: 0.3s;       /* حركة ناعمة سنستخدمها الآن */
-}
-
-/* حركة إضافية: عندما نضع الماوس على الصندوق */
-.service-box:hover {
-    transform: translateY(-10px); /* يرتفع الصندوق قليلاً للأعلى */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* ظل خفيف */
-}
-        .hero-container {
-            text-align: center;
-        }
-
-        .title-main {
-            font-size: clamp(50px, 10vw, 100px);
-            font-weight: 900;
-            letter-spacing: 40px;
-            margin: 0;
-            text-transform: uppercase;
-            line-height: 1;
-        }
-
-        .title-sub {
-            font-size: clamp(20px, 4vw, 40px);
-            font-weight: 300;
-            letter-spacing: 12px;
-            color: #64a69a;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
-
-        .btn-explore {
-            margin-top: 50px;
-            padding: 15px 45px;
-            background: transparent;
-            color: #d2beb6;
-            border: 2px solid #64a69a;
-            cursor: pointer;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            transition: all 0.4s ease;
-        }
-
-        .btn-explore:hover {
-            background-color: #64a69a;
-            color: #0a192f;
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(100, 166, 154, 0.4);
-        }
-        @media (max-width: 768px) {
-    .services {
-        flex-direction: column; /* اجعل الصناديق فوق بعضها بدل بجانب بعضها */
-        align-items: center;
-    }
-}
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <section class="hero-section">
-    <div class="hero-container">
-        <h1 class="title-main">DESIGN</h1>
-        <div class="title-sub">FORECAST 2026</div>
-    </div>
+    
 
-    <button class="btn-explore" onclick="alert('مرحباً بك في عالم Scando!')">Explore</button>
+    <nav class="navbar">
+        <div class="logo">Scando Vibe</div>
+        <div class="menu-icon" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+        <ul class="nav-links" id="nav-list">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">عن Scando</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+    </nav>
+
+    <header id ="home"class="hero-section">
+        <div class="hero-container">
+            <h1 class="title-main">DESIGN</h1>
+            <div class="title-sub">FORECAST 2026</div>
+            
+        </div>
+
+<button class="btn-explore" id="exploreBtn">Explore</button>    </header>
+
+    <section id="about" class="about-section">
+        <h2>عن Scando</h2>
+        <p>نحن نقدم حلولاً مبتكرة لتطوير الأعمال ندمج فيها بين الفن والتقنية.</p>
     </section>
-</section> 
 
-<section class="about-section">
-    <h2>عن Scando</h2>
-    <p>نحن نقدم حلولاً مبتكرة لتطوير الأعمال...</p>
+    <section id="services" class="services">
+        <div class="service-box reveal"><i class="fas fa-pen-nib service-icon"></i><h3>التصميم</h3><p>نبتكر هويات بصرية فريدة.</p></div>
+        <div class="service-box reveal"><i class="fas fa-code service-icon"></i><h3>التطوير</h3><p>نبرمج مواقع سريعة وقوية.</p></div>
+        <div class="service-box reveal"><i class="fas fa-bullhorn service-icon"></i><h3>التسويق</h3><p>نصل بمنتجك إلى جمهورك.</p></div>
+    </section>
+    
+<section id="portfolio" class="portfolio-section">
+    <div class="container">
+        <h2 class="section-title">مشاريعنا المميزة</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="تصميم فيلا مودرن - القاهرة">
+                <div class="project-info">
+                    <h3>فيلا مودرن</h3>
+                    <p>تصميم معماري خارجي</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://media.istockphoto.com/id/2186695595/photo/modern-office-interior-design-with-dark-materials-and-sleek-furnishings.webp?a=1&b=1&s=612x612&w=0&k=20&c=39xjYR2CqigeJrIAfmy7DBBYTWn1HpnD2gIDNq5dAHg=" alt="مكتب عمل إداري - التجمع">
+                <div class="project-info">
+                    <h3>مكتب Scando الإداري</h3>
+                    <p>تصميم داخلي وتأثيث</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="شقة سكنية - نيو كايرو">
+                <div class="project-info">
+                    <h3>شقة سكنية</h3>
+                    <p>ديكور مودرن اسكندنافي</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 
-<section class="services">
-    <div class="service-box">
-        <h3>التصميم</h3>
-        <p>نبتكر هويات بصرية فريدة.</p>
-    </div>
-    
-    <div class="service-box">
-        <h3>التطوير</h3>
-        <p>نبرمج مواقع سريعة وقوية.</p>
-    </div>
-    
-    <div class="service-box">
-        <h3>التسويق</h3>
-        <p>نصل بمنتجك إلى الجمهور المستهدف.</p>
+<div id="projectModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="imgFull">
+    <div id="caption"></div>
+</div>
+    <section class="contact-section reveal" id="contact">
+    <h2 class="reveal">تواصل معنا</h2>
+    <div class="contact-container reveal">
+        <form id="scandoForm" action="https://formspree.io/f/xqegqpna" method="POST">
+            
+            <input type="text" name="fullName" placeholder="الاسم الكامل" required>
+            
+            <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+            
+            <textarea name="message" placeholder="رسالتك لشركة Scando..." rows="5" required></textarea>
+            
+            <button type="submit" class="btn-explore">إرسال الرسالة</button>
+            
+        </form>
+        <div id="form-status" style="margin-top: 20px; display: none;"></div>
     </div>
 </section>
+    <footer class="main-footer">
+        <p>جميع الحقوق محفوظة © 2026 Scando Vibe</p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top">↑</button>
     
 
+<script src="main.js"></script>
 </body>
-
 </html>

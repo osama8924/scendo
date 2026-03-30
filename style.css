@@ -1,0 +1,443 @@
+:root {
+    --primary-color: #26a69a;
+    --bg-dark: #0a192f;
+    --bg-navy-deep: #020c1b;
+    --text-silver: #8892b0;
+    --white: #e6f1ff;
+    --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+} 
+        /* الأساسيات وتنسيق الجسم */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+       /* الحالة الأصلية: شفافة */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: transparent; /* تغيير من داكن إلى شفاف */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    transition: 0.5s ease; /* لإضافة نعومة عند تغيير اللون */
+}
+
+/* الحالة الجديدة: عند النزول (سيضيفها الـ JS) */
+.navbar.scrolled {
+    background-color: rgba(10, 25, 47, 0.85); 
+    backdrop-filter: blur(10px); /* هذا هو السحر الجديد */
+    padding: 12px 8%;
+    border-bottom: 1px solid rgba(38, 166, 154, 0.2);
+}
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #64a69a;
+            letter-spacing: 5px;
+            animation: fadeIn 1.5s ease-out; /* شغل فيلم fadeIn لمدة ثانية ونصف */
+        }
+        section { scroll-margin-top: 80px;} 
+        html {scroll-behavior: smooth;}
+
+        .nav-links {
+            display: flex;
+            list-style: none; /* لإزالة النقاط السوداء */
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white; /* تغيير اللون الأزرق إلى الأبيض */
+            text-decoration: none; /* إزالة الخط تحت الكلام */
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #64a69a; /* اللون الأخضر الخاص بهوية Scando */
+        }
+
+        /* تنسيق الواجهة الرئيسية (Hero Section) */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* يملأ الشاشة بالكامل */
+            width: 100%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://plus.unsplash.com/premium_photo-1684445035564-c98efbe1fb7d?q=80&w=687&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* جعل الخلفية ثابتة والكلام يتحرك فوقها */
+            color: #e6f1ff;
+        }
+
+       .title-main {
+    font-size: clamp(40px, 8vw, 90px);
+    letter-spacing: clamp(10px, 2vw, 20px);
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+
+        .title-sub {
+            font-size: clamp(20px, 4vw, 40px);
+            font-weight: 300;
+            letter-spacing: 12px;
+            color: #64a69a;
+            margin-top: 10px;
+        }
+
+        .btn-explore {
+            margin-top: 50px;
+            padding: 15px 45px;
+            background: transparent;
+            color: #d2beb6;
+            border: 2px solid #64a69a;
+            cursor: pointer;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: all 0.4s ease;
+            text-align: center; /* Center the text */
+
+        }
+
+        .btn-explore:hover {
+            background-color: #64a69a;
+            color: #0a192f;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(100, 166, 154, 0.4);
+        }
+
+        /* تنسيق قسم "عن Scando" */
+        .about-section {
+            padding: 100px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .about-section h2 { font-size: 36px; color: #333; margin-bottom: 20px; }
+
+        .about-section p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* تنسيق قسم الخدمات (Flexbox) */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            padding: 80px 50px;
+            background-color: rgba(255, 255, 255, 0.221);
+            flex-wrap: wrap; /* لجعلها متجاوبة مع الموبايل */
+        }
+.service-box {
+    background-color: #f1f1f139;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* حركة ارتدادية ناعمة */
+    border: 1px solid transparent;
+}
+
+.service-box:hover {
+    transform: translateY(-15px) scale(1.03); /* يرتفع ويكبر قليلاً */
+    background-color: rgba(255, 255, 255, 0.162);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: #64a69a; /* يظهر إطار بلون الهوية */
+}
+
+.service-box h3 {
+    color: #0a192f;
+    transition: 0.3s;
+}
+
+.service-box:hover h3 {
+    color: #64a69a; /* يتغير لون العنوان عند اللمس */
+}
+
+
+/* حركة إضافية عند لمس الصندوق بالماوس */
+.service-box:hover .service-icon {
+    transform: scale(1.2) rotate(10deg); /* تكبير الأيقونة مع ميلان بسيط */
+    color: #0a192f;                     /* تغيير اللون للداكن */
+}
+       .reveal {
+    opacity: 0;
+    transform: translateY(50px); /* إزاحة للأسفل */
+    transition: all 0.8s ease-out; /* مدة الحركة ونعومتها */
+}
+        .reveal.visible {
+    opacity: 1;
+    transform: translateY(0); /* العودة للمكان الأصلي */
+}
+        .reveal:nth-child(2) { transition-delay: 0.2s; } /* تأخير بسيط للثاني */
+.reveal:nth-child(3) { transition-delay: 0.4s; } /* تأخير أكبر للثالث */
+
+        /* تنسيق قسم التواصل */
+        .contact-section {
+            padding: 100px 20px;
+            background-color: #0a192f;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 40px auto 0;
+        }
+
+        .contact-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-container input, .contact-container textarea {
+            padding: 15px;
+            background-color: #112240;
+            border: 1px solid #233554;
+            color: white;
+            border-radius: 8px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        /* تفاعل الحقول عند الكتابة (Focus) */
+        input:focus, textarea:focus {
+            border-color: #64a69a !important;
+            background-color: #1a2a41 !important;
+        }
+
+        /* تفاعل الأزرار عند النقر (Active) */
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* تنسيق التذييل (Footer) */
+        .main-footer {
+            background-color: #020c1b;
+            color: #8892b0;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #233554;
+        }
+
+ /* --- 1. الأكواد العامة (خارج الميديا كويري) --- */
+@keyframes fadeInBox {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.service-icon {
+    font-size: 40px;
+    color: #26a69a;
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+
+.menu-icon {
+    display: none; /* مخفي في الكمبيوتر */
+    width: 45px;
+    height: 45px;
+    background-color: rgba(38, 166, 154, 0.1);
+    border: 1px solid rgba(38, 166, 154, 0.3);
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-icon i {
+    color: #26a69a !important;
+    font-size: 22px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #26a69a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 2000;
+    transition: 0.3s;
+}
+
+/* --- 2. كود الموبايل (كل شيء داخل قوس واحد) --- */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex !important; /* يظهر في الموبايل فقط */
+        z-index: 1002;
+    }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        background-color: #0a192f;
+        position: absolute;
+        top: 70px;
+        right: 15px; /* مسافة من الحافة ليعطي شكل الصندوق */
+        width: 220px; /* عرض الصندوق الأنيق */
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #26a69a;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        z-index: 1001;
+        gap: 15px;
+    }
+
+    .nav-links.active {
+        display: flex !important;
+        animation: fadeInBox 0.3s ease-in-out;
+    }
+
+    .nav-links li {
+        list-style: none;
+        width: 100%;
+        text-align: right;
+    }
+
+    .nav-links li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        display: block;
+        padding: 10px;
+    }
+
+    .services {
+        padding: 50px 20px;
+    }
+}
+/* 1. الحاوية الرئيسية للمعرض */
+.portfolio-section {
+    padding: 80px 0;
+    background-color: #0a192f;
+    text-align: center;
+}
+
+/* 2. شبكة عرض الصور */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 0 5%;
+}
+
+/* 3. كارت المشروع */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 350px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* 4. تنسيق الصورة */
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+/* 5. توسيط النص الاحترافي (الحل المطلوب) */
+.project-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.85); /* خلفية داكنة شفافة */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* توسيط عمودي */
+    align-items: center;    /* توسيط أفقي */
+    text-align: center;
+    padding: 20px;
+    
+    /* حالة الإخفاء */
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+/* 6. إظهار النص عند الهوفر */
+.project-card:hover .project-info {
+    opacity: 1;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+/* 7. تنسيق الكلام داخل التوسيط */
+.project-info h3 {
+    color: #26a69a;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+
+.project-info p {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+/* تنسيق النافذة المنبثقة (Modal) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(10, 25, 47, 0.98);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 85%;
+    max-width: 900px;
+    border-radius: 10px;
+    border: 2px solid #26a69a;
+    animation: zoomIn 0.3s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px; right: 35px;
+    color: #fff;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#caption {
+    text-align: center;
+    color: #26a69a;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
